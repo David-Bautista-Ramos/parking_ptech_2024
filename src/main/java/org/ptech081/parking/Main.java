@@ -39,12 +39,15 @@ public class Main {
         LocalDate fechaFin = LocalDate.of(2024, Month.MARCH, 24);
         LocalTime horaFin = LocalTime.of(15, 30, 0);
         
+        //Crear empleado
+        Empleado empleado1 = new Empleado(01, "Alejandro","Rodrigues");
+        Empleado empleado2 = new Empleado(02, "Carlos", "Martinez");
 
         List<Registro> misRegistros = new ArrayList<Registro>();
         //Crear Registro
-        Registro registro1 = new Registro(fechaInicio, horaInicio, fechaFin, horaFin, 5000L,cupo1,cliente1.misCarros.get(0),cliente1);
+        Registro registro1 = new Registro(fechaInicio, horaInicio, fechaFin, horaFin, 5000L,cupo1,cliente1.misCarros.get(0),cliente1,empleado1);
         
-        Registro registro2 = new Registro(fechaInicio, horaInicio, fechaFin, horaFin, 7000L, cupo2,cliente2.misCarros.get(1),cliente2);
+        Registro registro2 = new Registro(fechaInicio, horaInicio, fechaFin, horaFin, 7000L, cupo2,cliente2.misCarros.get(1),cliente2,empleado2);
 
         
         //añadir el registro a la lista
@@ -60,8 +63,10 @@ public class Main {
                                         r.fechaInicio + " " +
                                         r.horaInicio+ "|" +
                                         r.fechaFin + " " +
-                                        r.horaFin +
-                                         "|");
+                                        r.horaFin + "|" +
+                                        r.empleado.codigoEmpleado + " " + 
+                                        r.empleado.nombreEmpleado + " " +
+                                        r.empleado.apellidoEmpleado + " " +"|");
         }
         }
       
